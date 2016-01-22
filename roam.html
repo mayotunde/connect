@@ -14,11 +14,13 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibWF5b3R1bmRlIiwiYSI6IlpFM1Jmck0ifQ.13TB14FKWB328q1q7eEZUQ';
 var map = L.mapbox.map('map', 'mapbox.streets')
-    .setView([6.44, 3.35], 10);
+    .setView([4.6, 2.35], 5);
 
 
 var featureLayer = L.mapbox.featureLayer()
-    .loadURL('https://cdn.rawgit.com/mayotunde/connect/master/africa_populated_cities.json')
+    .loadURL('https://cdn.rawgit.com/mayotunde/connect/master/africa_populated_cities.json', {pointToLayer: function(feature, latlng){
+        marker = L.circleMarker(latlng); return marker;
+    }})
     .addTo(map);
 </script>
 
