@@ -19,9 +19,8 @@ var map = L.mapbox.map('map', 'mapbox.streets')
 
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('https://cdn.rawgit.com/mayotunde/connect/master/africa_populated_cities.json', {pointToLayer: function(feature, latlng){
-        marker = L.circleMarker(latlng); return marker;
-    }})
-    .addTo(map);
+        marker = L.circleMarker(latlng); return marker
+    }}).addTo(map);
 </script>
 
 </body>
